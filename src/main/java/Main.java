@@ -17,8 +17,10 @@ public class Main {
                     calculator.toSumItems();
                     Formatter formatter = new Formatter();
                     double result = formatter.toRound(calculator.sum / guests);
-                    System.out.println("Добавленные товары: " + calculator.items + "\nСумма к оплате: "
-                            + result + " " + formatter.toFormatRubles(result));
+                    System.out.println("Добавленные товары: ");
+                    Formatter.printStrings(calculator.items);
+                    System.out.println("\nСумма к оплате: " + result + " " +
+                            formatter.toFormatRubles(result));
                     break;
                 }
             } catch (NumberFormatException ex) {

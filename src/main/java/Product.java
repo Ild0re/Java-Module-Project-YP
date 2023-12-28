@@ -6,4 +6,8 @@ public class Product {
         this.name = name;
         this.cost = cost;
     }
+
+    public String toString() {
+        return name + " " + cost ;
+    }
 }

@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Formatter {
     double toRound(double number) {
         double roundedNumber = Math.round(number * 100.0) / 100.0;
@@ -19,6 +21,12 @@ public class Formatter {
                 return "рубля";
             default:
                 return "рублей";
+        }
+    }
+
+    public static void printStrings(ArrayList<Product> product) {
+        for (int i = 0; i < product.size(); i++) {
+            System.out.println(product.get(i).toString());
         }
     }
 }

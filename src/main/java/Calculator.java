@@ -1,14 +1,15 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Calculator {
     int people;
     double sum;
-    String items;
+    ArrayList<Product> items;
 
     Calculator(int people) {
         this.people = people;
         this.sum = 0;
-        this.items = "";
+        this.items = new ArrayList<>();
     }
 
     void toSumItems() {
@@ -21,7 +22,7 @@ public class Calculator {
             Product newProduct = new Product(item, itemCost);
             System.out.println("Товар успешно добавлен.");
             sum += newProduct.cost;
-            items += "\n" + newProduct.name + " " + newProduct.cost;
+            items.add(newProduct);
             System.out.println("Хотите ввести еще товар?");
             String answer = scanner.next();
             if (answer.equalsIgnoreCase("Завершить")) {
