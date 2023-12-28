@@ -15,11 +15,18 @@ public class Calculator {
     void toSumItems() {
         while (true) {
             Scanner scanner = new Scanner(System.in);
-            String item = toDefineName(scanner);
-            double itemCost = toDefineCost(scanner);
+            System.out.println("Введите название товара:");
+            String item = scanner.nextLine();
+            System.out.println("Введите стоимость товара:");
+            while (!scanner.hasNextDouble()) {
+                System.out.println("Введите число!");
+                scanner.nextLine();
+            }
+            double itemCost = scanner.nextDouble();
             if (itemCost < 0) {
                 System.out.println("Введите положительное число!");
             } else {
+                scanner.nextLine();
                 Product newProduct = new Product(item, itemCost);
                 System.out.println("Товар успешно добавлен.");
                 sum += newProduct.cost;
@@ -32,19 +39,5 @@ public class Calculator {
                 }
             }
         }
-    }
-
-    String toDefineName(Scanner scanner) {
-        System.out.println("Введите название товара:");
-        return scanner.nextLine();
-    }
-
-    Double toDefineCost(Scanner scanner) {
-        System.out.println("Введите стоимость товара:");
-        while (!scanner.hasNextDouble()) {
-            System.out.println("Введите число!");
-            scanner.nextLine();
-        }
-        return scanner.nextDouble();
     }
 }
