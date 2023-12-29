@@ -21,8 +21,9 @@ public class Main {
                 double result = formatter.toRound(calculator.sum / guests);
                 System.out.println("Добавленные товары: ");
                 Formatter.printStrings(calculator.items);
-                System.out.println("\nСумма к оплате: " + result + " " +
+                String rublesResult = String.format("\nСумма к оплате: %.2f %s", result,
                         formatter.toFormatRubles(result));
+                System.out.println(rublesResult);
                 break;
             }
         }

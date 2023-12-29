@@ -8,6 +8,6 @@ public class Product {
     }
 
     public String toString() {
-        return name + " " + cost ;
+        return String.format("%s %.2f", name, cost) ;
     }
 }
